@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: your-image-repo
+  repository: jaimehenao8126/kubeops:709b59fd5f72b8dfcb51c642cf88d44493a3f6c9
   tag: latest
   pullPolicy: IfNotPresent
 service:
@@ -11,7 +11,7 @@ ingress:
   className: ""
   annotations: {}
   hosts:
-    - host: chart-example.local
+    - host: gitops1-test.local
       paths:
         - path: /
           pathType: ImplementationSpecific
