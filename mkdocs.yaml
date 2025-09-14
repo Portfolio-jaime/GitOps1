@@ -1,0 +1,25 @@
+site_name: 'GitOps Demo'
+site_description: 'GitOps implementation with Kubernetes, GitHub Actions and ArgoCD'
+repo_url: https://github.com/Portfolio-jaime/GitOps
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+
+# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.json`
+nav:
+  - Home: 'index.md'
+  - Getting Started:
+      - Prerequisites: 'prerequisites.md'
+      - Setup: 'setup.md'
+  - Architecture:
+      - Overview: 'architecture.md'
+      - Components: 'components.md'
+  - Deployment:
+      - Docker: 'docker.md'
+      - Kubernetes: 'kubernetes.md'
+      - ArgoCD: 'argocd.md'
+  - CI/CD:
+      - GitHub Actions: 'github-actions.md'
+      - Pipeline: 'pipeline.md'
+  - Troubleshooting: 'troubleshooting.md'

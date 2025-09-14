@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatización de Kubernetes</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Interfaz de Automatización para Kubernetes</h1>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Conectar al Clúster de Kubernetes</h5>
+            <form id="k8sForm">
+                <div class="form-group">
+                    <label for="clusterUrl">URL del Clúster:</label>
+                    <input type="text" class="form-control" id="clusterUrl" placeholder="https://tu-cluster-k8s.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="token">Token de Acceso:</label>
+                    <input type="text" class="form-control" id="token" placeholder="Token de acceso" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Conectar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mt-4" id="outputCard" style="display: none;">
+        <div class="card-body">
+            <h5 class="card-title">Resultados</h5>
+            <pre id="outputText"></pre>
+        </div>
+    </div>
+
+    <div class="card mt-4">
+        <div class="card-body">
+            <h5 class="card-title">Ejecutar Script de Python</h5>
+            <textarea class="form-control" id="pythonScript" rows="5" placeholder="Escribe tu script de Python aquí..."></textarea>
+            <button id="executeScript" class="btn btn-success mt-2">Ejecutar Script</button>
+        </div>
+    </div>
+</div>
+
+<script>
+// Manejo del formulario de conexión
+document.getElementById('k8sForm').onsubmit = function(event) {
+    event.preventDefault();
+    const clusterUrl = document.getElementById('clusterUrl').value;
+    const token = document.getElementById('token').value;
+
+    // Aquí debes hacer la llamada a tu API para conectarte al clúster de Kubernetes
+    // Simulación de la conexión
+    const outputText = `Conectado a ${clusterUrl} con el token proporcionado.`;
+    document.getElementById('outputText').innerText = outputText;
+    document.getElementById('outputCard').style.display = 'block';
+};
+
+// Manejo de la ejecución del script de Python
+document.getElementById('executeScript').onclick = function() {
+    const script = document.getElementById('pythonScript').value;
+
+    // Aquí debes hacer la llamada a tu API para ejecutar el script de Python
+    // Simulación de la ejecución
+    const outputText = `Ejecutando el script:\n${script}`;
+    document.getElementById('outputText').innerText = outputText;
+    document.getElementById('outputCard').style.display = 'block';
+};
+
+</script>
+
+</body>
+</html>

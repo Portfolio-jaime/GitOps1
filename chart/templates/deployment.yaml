@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "gitops1.fullname" . }}
+  labels:
+    app: {{ include "gitops1.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "gitops1.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "gitops1.name" . }}
+    spec:
+      containers:
+        - name: {{ include "gitops1.name" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 80

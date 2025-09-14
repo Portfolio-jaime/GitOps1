@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw-deploy
+  namespace: poc
+  labels:
+    app: kubeops
+    kuma.io/service: kubeops # Etiqueta para Kuma
+spec:
+  replicas: 2  # Ajusta el número de replicas según tus necesidades
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: hw
+  template:
+    metadata:
+      labels:
+        app: hw
+        kuma.io/service: kubeops # Etiqueta para Kuma
+    spec:
+      containers:
+      - name: hw-container
+        image: jaimehenao8126/kubeops:d3aa37e6acfa903d70918d833ada962f2600cb36
+        ports:
+        - containerPort: 80

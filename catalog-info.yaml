@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: gitops
+  description: GitOps tools and scripts.
+  annotations:
+    github.com/project-slug: Portfolio-jaime/GitOps
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: service
+  owner: development
+  lifecycle: experimental
