@@ -1,7 +1,7 @@
 replicaCount: 1
 image:
-  repository: jaimehenao8126/kubeops:709b59fd5f72b8dfcb51c642cf88d44493a3f6c9
-  tag: latest
+  repository: jaimehenao8126/kubeops
+  tag: 709b59fd5f72b8dfcb51c642cf88d44493a3f6c9
   pullPolicy: IfNotPresent
 service:
   type: ClusterIP
