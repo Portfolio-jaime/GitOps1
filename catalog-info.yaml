@@ -6,6 +6,7 @@ metadata:
   annotations:
     github.com/project-slug: Portfolio-jaime/GitOps1
     backstage.io/techdocs-ref: dir:.
+    argocd/app-name: GitOps1
 spec:
   type: service
   owner: devops-team
