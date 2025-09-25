@@ -7,7 +7,7 @@ metadata:
     github.com/project-slug: Portfolio-jaime/GitOps1
     backstage.io/techdocs-ref: dir:.
     argocd/app-name: GitOps1
-    backstage.io/kubernetes-id: python-app-1
+    backstage.io/kubernetes-id: gitops1
     backstage.io/kubernetes-namespace: gitops1
   labels:
     environment: development
